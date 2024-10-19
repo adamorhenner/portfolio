@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import NavbarComponent from "@/components/NavBar";
 import ImageWithIcons from "@/components/ImageWithIcons";
+import {FaDatabase, FaNodeJs, FaReact} from "react-icons/fa";
 
 const sectionStyle = {
     height: '100vh',
@@ -58,7 +59,11 @@ const Home = () => {
                             <p>&gt; Fullstack Developer</p>
                         </TitleDiv>
                     </TitleContainer>
-                    <ImageWithIcons/>
+                    <ImageWithIcons
+                        icon1={<FaReact size={40} color="#61DBFB" />}
+                        icon2={<FaNodeJs size={30} color="#68A063" />}
+                        icon3={<FaDatabase size={60} color="#4DB33D" />}
+                    />
                 </div>
             </section>
 

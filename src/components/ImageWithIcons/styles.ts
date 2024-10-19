@@ -12,11 +12,10 @@ export const ImageWrapper = styled.div`
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 `;
 
-export const IconWrapper = styled.div<{ top?: string, bottom?: string, left?: string, transform?: string }>`
+export const IconWrapper = styled.div<{ top?: string, bottom?: string, left?: string, transform?: string, size?: string }>`
     position: absolute;
     background: #1A0B2E;
     border-radius: 50%;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,4 +23,5 @@ export const IconWrapper = styled.div<{ top?: string, bottom?: string, left?: st
     ${({ bottom }) => bottom && `bottom: ${bottom};`}
     ${({ left }) => left && `left: ${left};`}
     ${({ transform }) => transform && `transform: ${transform};`}
+    ${({ size }) => size && `width: ${size}; height: ${size};`}
 `;
