@@ -60,13 +60,15 @@ const Home = () => {
                             <p>&lt; Adamor </p>
                             <p>Henner /&gt;</p>
                             <ReactTypingEffect
-                                text={['> Fullstack Developer']}
+                                text={['Fullstack Developer']}
                                 speed={100}
-                                eraseDelay={10}
+                                eraseDelay={1000}
                                 typingDelay={500}
                                 displayTextRenderer={(text, i) => {
-                                    return <p>{text}</p>;
+                                    return <p>&gt;{text}</p>;
                                 }}
+                                cursorRenderer={(cursor) => <span
+                                    style={{fontSize: '4rem', color: '#A68AB8'}}>{cursor}</span>}
                             />
                         </TitleDiv>
                     </TitleContainer>
