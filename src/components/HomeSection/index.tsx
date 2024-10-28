@@ -1,13 +1,11 @@
 import { FaDatabase, FaNodeJs, FaReact } from "react-icons/fa";
 import ReactTypingEffect from 'react-typing-effect';
-
 import ImageWithIcons from "@/components/ImageWithIcons";
-
 import * as S from './styles';
 
 const HomeSection = () => {
     return (
-        <S.HomeContainer>
+        <S.HomeContainer style={{ position: 'relative', zIndex: 1 }}>
             <S.TitleContainer>
                 <S.TitleDiv>
                     <p>Hello, I am</p>

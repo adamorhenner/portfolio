@@ -1,6 +1,7 @@
 "use client";
 import HomeSection from "@/components/HomeSection";
 import NavbarComponent from "@/components/NavBar";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const sectionStyle = {
     height: '100vh',
@@ -16,6 +17,7 @@ const Home = () => {
             <NavbarComponent/>
             {/* Seção Home */}
             <section id="home" style={sectionStyle}>
+                <ParticlesBackground />
                 <HomeSection/>
             </section>
 
