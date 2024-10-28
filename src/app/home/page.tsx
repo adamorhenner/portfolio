@@ -1,51 +1,14 @@
 "use client";
-import styled from 'styled-components';
+import HomeSection from "@/components/HomeSection";
 import NavbarComponent from "@/components/NavBar";
-import ImageWithIcons from "@/components/ImageWithIcons";
-import {FaDatabase, FaNodeJs, FaReact} from "react-icons/fa";
-import ReactTypingEffect from 'react-typing-effect';
 
 const sectionStyle = {
     height: '100vh',
-    paddingTop: '4rem'
+    paddingTop: '4rem',
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
+    boxSizing: 'border-box'
 };
-
-const TitleDiv = styled.div`
-    flex: 1;
-    text-align: left;
-    color: #A68AB8; /* Light Color */
-    font-family: 'Roboto', Arial, sans-serif;
-
-    p {
-        margin: 0;
-        font-size: 1.5rem;
-    }
-
-    p:first-child {
-        font-size: 2.5em;
-        font-weight: bold;
-    }
-
-    p:nth-child(2),
-    p:nth-child(3) {
-        font-size: 4.8rem;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    p:last-child {
-        font-size: 3.6rem;
-        color: #5C2F6E; /* Accent Color */
-    }
-`;
-
-const TitleContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-
-`;
 
 const Home = () => {
     return (
@@ -53,31 +16,7 @@ const Home = () => {
             <NavbarComponent/>
             {/* Seção Home */}
             <section id="home" style={sectionStyle}>
-                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
-                    <TitleContainer>
-                        <TitleDiv>
-                            <p>Hello, I am</p>
-                            <p>&lt; Adamor </p>
-                            <p>Henner /&gt;</p>
-                            <ReactTypingEffect
-                                text={['Fullstack Developer']}
-                                speed={100}
-                                eraseDelay={1000}
-                                typingDelay={500}
-                                displayTextRenderer={(text, i) => {
-                                    return <p>&gt;{text}</p>;
-                                }}
-                                cursorRenderer={(cursor) => <span
-                                    style={{fontSize: '4rem', color: '#A68AB8'}}>{cursor}</span>}
-                            />
-                        </TitleDiv>
-                    </TitleContainer>
-                    <ImageWithIcons
-                        icon1={<FaReact size={40} color="#61DBFB"/>}
-                        icon2={<FaNodeJs size={30} color="#68A063"/>}
-                        icon3={<FaDatabase size={60} color="#4DB33D"/>}
-                    />
-                </div>
+                <HomeSection/>
             </section>
 
             {/* Seção Experiência */}
