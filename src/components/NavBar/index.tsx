@@ -1,7 +1,7 @@
 "use client";
 import {useState} from 'react';
 
-import {Link,Navbar, NavbarContent, NavbarItem} from './styles';
+import {Link, Navbar, NavbarContent, NavbarItem} from './styles';
 
 const NavbarComponent = () => {
     const [activeSection, setActiveSection] = useState('home');

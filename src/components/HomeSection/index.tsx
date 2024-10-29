@@ -18,7 +18,7 @@ const HomeSection = () => {
                         speed={100}
                         eraseDelay={1000}
                         typingDelay={500}
-                        displayTextRenderer={(text, i) => {
+                        displayTextRenderer={(text) => {
                             return <p>&gt;{text}</p>;
                         }}
                         cursorRenderer={(cursor) => <span style={{ fontSize: '4rem', color: '#A68AB8' }}>{cursor}</span>}
