@@ -1,6 +1,8 @@
-import { FaDatabase, FaNodeJs, FaReact } from "react-icons/fa";
+import {FaDatabase, FaJava, FaReact} from "react-icons/fa";
 import ReactTypingEffect from 'react-typing-effect';
+
 import ImageWithIcons from "@/components/ImageWithIcons";
+
 import * as S from './styles';
 
 const HomeSection = () => {
@@ -25,8 +27,8 @@ const HomeSection = () => {
             </S.TitleContainer>
             <ImageWithIcons
                 icon1={<FaReact size={40} color="#61DBFB" />}
-                icon2={<FaNodeJs size={30} color="#68A063" />}
-                icon3={<FaDatabase size={60} color="#4DB33D" />}
+                icon2={<FaDatabase size={30} color="#4DB33D" />}
+                icon3={<FaJava size={60} color="#920029FF" />}
             />
         </S.HomeContainer>
     );

@@ -1,4 +1,6 @@
 "use client";
+import '../../styles/global.css';
+
 import HomeSection from "@/components/HomeSection";
 import NavbarComponent from "@/components/NavBar";
 import ParticlesBackground from "@/components/ParticlesBackground";
@@ -8,7 +10,9 @@ const sectionStyle = {
     paddingTop: '4rem',
     paddingLeft: '1rem',
     paddingRight: '1rem',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    position: 'relative',
+    overflow: 'hidden'
 };
 
 const Home = () => {
