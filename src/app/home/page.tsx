@@ -4,6 +4,7 @@ import '../../styles/global.css';
 import HomeSection from "@/components/HomeSection";
 import NavbarComponent from "@/components/NavBar";
 import ParticlesBackground from "@/components/ParticlesBackground";
+import StarWarsIntro from "@/components/StarWarsIntro";
 
 const sectionStyle = {
     height: '100vh',
@@ -27,8 +28,7 @@ const Home = () => {
 
             {/* Seção Experiência */}
             <section id="experiencia" style={sectionStyle}>
-                <h2>Experiência Profissional</h2>
-                <p>Aqui você pode listar suas experiências...</p>
+                <StarWarsIntro/>
             </section>
 
             {/* Seção Projetos */}
