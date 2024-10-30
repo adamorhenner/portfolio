@@ -12,37 +12,44 @@ const crawlAnimation = keyframes`
 `;
 
 const StarWarsIntroContainer = styled.div`
-    font-family: 'Arial', sans-serif;
-    perspective: 1000px;
-    overflow: hidden;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.55);;
-    background-size: cover;
-    color: yellow;
-    position: relative;
+  font-family: 'Arial', sans-serif;
+  perspective: 1000px;
+  overflow: hidden;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.16);
+  color: yellow;
+  position: relative;
 
-    &:before {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
-        bottom: 0;
-        content: " ";
-        left: 0;
-        right: 0;
-        position: absolute;
-        top: 0;
-        z-index: 100;
-    }
+  &:before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+    bottom: 0;
+    content: " ";
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+  }
 `;
 
 const Crawl = styled.div`
-  font-size: 4em; /* Increase font size */
+  font-size: 4em;
   bottom: 0;
   height: 60rem;
   left: 50%;
   position: absolute;
-  transform: translateX(-50%) perspective(800px) rotateX(28deg);
+  transform: translateX(-50%) perspective(900px) rotateX(28deg);
   transform-origin: 50% 100%;
   width: 90%;
-  animation: ${crawlAnimation} 60s linear infinite; /* Reduce animation duration */
+  animation: ${crawlAnimation} 30s linear infinite;
+
+  @media (max-width: 768px) {
+    font-size: 3em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3em;
+  }
 `;
 
 const Content = styled.div`
@@ -54,16 +61,32 @@ const Title = styled.h1`
   font-weight: 600;
   margin-bottom: 5rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
 `;
 
 const Subtitle = styled.h2`
   font-family: "Saira Extra Condensed", sans-serif;
-  font-size: 3em; /* Increase font size */
+  font-size: 3em;
   font-weight: 500;
   line-height: 1;
   margin-bottom: 7rem;
   transform: scale(1, 1.5);
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2em;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -71,14 +94,23 @@ const Paragraph = styled.p`
   line-height: 1.33;
   margin-bottom: 4rem;
   text-align: justify;
+
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8em;
+  }
 `;
 
 const StarWarsIntro: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 }); /* Set repeat to -1 for infinite loop and add a small delay */
-    tl.to(contentRef.current, { top: "-170%", duration: 10 }); /* Reduce animation duration */
+    const tl = gsap.timeline({ repeat: 3, repeatDelay: 1 });
+    tl.set(contentRef.current, { top: '100%' }); // Reset position
+    tl.to(contentRef.current, { top: "-170%", duration: 10 });
   }, []);
 
   return (
