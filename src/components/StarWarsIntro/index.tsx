@@ -1,27 +1,17 @@
 import React, { useRef, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { gsap } from 'gsap';
-
-const crawlAnimation = keyframes`
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: -170%;
-  }
-`;
 
 const StarWarsIntroContainer = styled.div`
   font-family: 'Arial', sans-serif;
   perspective: 1000px;
   overflow: hidden;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.16);
-  color: yellow;
+  color: #A68AB8;
   position: relative;
 
   &:before {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(17, 7, 31, 1) 0%, rgba(17, 7, 31, 1) 20%, rgba(17, 7, 31, 0) 40%, rgba(17, 7, 31, 0) 100%);
     bottom: 0;
     content: " ";
     left: 0;
@@ -41,7 +31,6 @@ const Crawl = styled.div`
   transform: translateX(-50%) perspective(900px) rotateX(28deg);
   transform-origin: 50% 100%;
   width: 90%;
-  animation: ${crawlAnimation} 30s linear infinite;
 
   @media (max-width: 768px) {
     font-size: 3em;
@@ -108,9 +97,9 @@ const StarWarsIntro: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: 3, repeatDelay: 1 });
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
     tl.set(contentRef.current, { top: '100%' }); // Reset position
-    tl.to(contentRef.current, { top: "-170%", duration: 10 });
+    tl.to(contentRef.current, { top: "-170%", duration: 50 });
   }, []);
 
   return (
