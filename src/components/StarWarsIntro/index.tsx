@@ -1,6 +1,14 @@
-import React, { useRef, useEffect } from 'react';
-import styled from 'styled-components';
+'use client';
+
 import { gsap } from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import styled from 'styled-components';
+
+import type { Dictionary } from '@/i18n/getDictionary';
+
+type Props = {
+  dict: Dictionary['experience'];
+};
 
 const StarWarsIntroContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -93,24 +101,38 @@ const Paragraph = styled.p`
   }
 `;
 
-const StarWarsIntro: React.FC = () => {
+const StarWarsIntro = ({ dict }: Props) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const node = contentRef.current;
+    if (!node) return;
+
+    // Quem pediu menos animacao no sistema le o texto parado, sem rolagem.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      gsap.set(node, { top: '5%' });
+      return;
+    }
+
     const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-    tl.set(contentRef.current, { top: '100%' }); // Reset position
-    tl.to(contentRef.current, { top: "-170%", duration: 50 });
+    tl.set(node, { top: '100%' });
+    tl.to(node, { top: '-170%', duration: 25, ease: 'none' });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
 
   return (
     <StarWarsIntroContainer>
       <Crawl>
         <Content ref={contentRef}>
-          <Title>Episode 7</Title>
-          <Subtitle>THE APP AWAKENS</Subtitle>
-          <Paragraph>The Development Team Lead has vanished. In her absence, the sinister FUNCTIONAL BUG has risen from the ashes of the CI Tool and will not rest until the last developer has been destroyed.</Paragraph>
-          <Paragraph>With the support of the QA TEAM, the Software Developer leads a brave RESISTANCE. He is desperate to find his Lead and gain her help in restoring peace and justice to the repository.</Paragraph>
-          <Paragraph>The Developer has sent his most daring editor theme on a secret mission to the production branch, where an old ally has discovered a clue to the Lead’s whereabouts....</Paragraph>
+          <Title>{dict.episode}</Title>
+          <Subtitle>{dict.title}</Subtitle>
+          {dict.paragraphs.map((paragraph) => (
+            <Paragraph key={paragraph.slice(0, 24)}>{paragraph}</Paragraph>
+          ))}
         </Content>
       </Crawl>
     </StarWarsIntroContainer>

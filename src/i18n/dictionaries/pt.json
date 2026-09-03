@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Adamor Henner — Desenvolvedor Fullstack",
+    "description": "Desenvolvedor fullstack com mais de 5 anos construindo sistemas de conciliação bancária e integração com operadoras de pagamento em Java, Spring Boot, React e TypeScript."
+  },
+  "nav": {
+    "home": "Início",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "languageLabel": "Idioma",
+    "switchTo": "View in English"
+  },
+  "home": {
+    "greeting": "Olá, eu sou",
+    "roles": ["Desenvolvedor Fullstack", "Java · Spring Boot · React"]
+  },
+  "experience": {
+    "episode": "Episódio V",
+    "title": "O LEGADO CONTRA-ATACA",
+    "paragraphs": [
+      "Há cinco anos um estagiário entrou numa empresa de conciliação bancária em Fortaleza. Os sistemas eram vastos, o legado era profundo, e o monolito seguia intocado havia anos.",
+      "Ele o dividiu. O que era um único sistema Angular virou um microsserviço independente, com API própria, e o frontend foi reconstruído em React sem parar a operação.",
+      "Hoje lidera o portal de onboarding de clientes que acompanha desde o primeiro commit — tomando decisões de arquitetura, conduzindo discovery técnico e entregando em produção."
+    ]
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Trabalhos selecionados. Buscados direto do GitHub.",
+    "codeLabel": "Código",
+    "demoLabel": "Ver no ar",
+    "updatedLabel": "Atualizado",
+    "emptyState": "Não consegui carregar a lista de projetos agora. Ela está disponível no GitHub.",
+    "githubLink": "Ver tudo no GitHub"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Aberto a oportunidades internacionais."
+  }
+}

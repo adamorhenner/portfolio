@@ -1,0 +1,36 @@
+import HomeSection from '@/components/HomeSection';
+import NavbarComponent from '@/components/NavBar';
+import ParticlesBackground from '@/components/ParticlesBackground';
+import StarWarsIntro from '@/components/StarWarsIntro';
+import {defaultLocale, isLocale, type Locale} from '@/i18n/config';
+import {getDictionary} from '@/i18n/getDictionary';
+
+export default async function Home({params}: { params: { lang: string } }) {
+    const lang: Locale = isLocale(params.lang) ? params.lang : defaultLocale;
+    const dict = await getDictionary(lang);
+
+    return (
+        <div>
+            <NavbarComponent lang={lang} dict={dict.nav}/>
+
+            <section id="home" className="section">
+                <ParticlesBackground/>
+                <HomeSection dict={dict.home}/>
+            </section>
+
+            <section id="experiencia" className="section">
+                <StarWarsIntro dict={dict.experience}/>
+            </section>
+
+            <section id="projetos" className="section">
+                <h2>{dict.projects.title}</h2>
+                <p>{dict.projects.subtitle}</p>
+            </section>
+
+            <section id="contato" className="section">
+                <h2>{dict.contact.title}</h2>
+                <p>{dict.contact.subtitle}</p>
+            </section>
+        </div>
+    );
+}

@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Adamor Henner — Fullstack Developer",
+    "description": "Fullstack developer with 5+ years building bank reconciliation and payment integration systems with Java, Spring Boot, React and TypeScript."
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "languageLabel": "Language",
+    "switchTo": "Ver em português"
+  },
+  "home": {
+    "greeting": "Hello, I am",
+    "roles": ["Fullstack Developer", "Java · Spring Boot · React"]
+  },
+  "experience": {
+    "episode": "Episode V",
+    "title": "THE LEGACY STRIKES BACK",
+    "paragraphs": [
+      "Five years ago an intern joined a bank reconciliation company in Fortaleza. The systems were vast, the legacy ran deep, and the monolith had stood unchallenged for years.",
+      "He took it apart. What was once a single Angular system became an independent microservice with its own API, and its frontend was rebuilt in React while the business kept running.",
+      "Today he leads the client onboarding portal he has grown with since its first commit — making architecture decisions, running technical discovery, and shipping to production."
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Selected work. Pulled live from GitHub.",
+    "codeLabel": "Code",
+    "demoLabel": "Live demo",
+    "updatedLabel": "Updated",
+    "emptyState": "The project list could not be loaded right now. It is available on GitHub.",
+    "githubLink": "See everything on GitHub"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Open to international opportunities."
+  }
+}
