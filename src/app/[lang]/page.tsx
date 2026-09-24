@@ -1,3 +1,5 @@
+import ContactSection from '@/components/ContactSection';
+import ExperienceTimeline from '@/components/ExperienceTimeline';
 import HomeSection from '@/components/HomeSection';
 import NavbarComponent from '@/components/NavBar';
 import ParticlesBackground from '@/components/ParticlesBackground';
@@ -22,6 +24,7 @@ export default async function Home({params}: { params: { lang: string } }) {
 
             <section id="experiencia" className="section">
                 <StarWarsIntro dict={dict.experience}/>
+                <ExperienceTimeline dict={dict.experience}/>
             </section>
 
             <section id="projetos" className="section">
@@ -29,8 +32,7 @@ export default async function Home({params}: { params: { lang: string } }) {
             </section>
 
             <section id="contato" className="section">
-                <h2>{dict.contact.title}</h2>
-                <p>{dict.contact.subtitle}</p>
+                <ContactSection lang={lang} dict={dict.contact}/>
             </section>
         </div>
     );

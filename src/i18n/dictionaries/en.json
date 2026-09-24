@@ -23,9 +23,59 @@
     "title": "THE LEGACY STRIKES BACK",
     "paragraphs": [
       "Five years ago an intern joined a bank reconciliation company in Fortaleza. The systems were vast, the legacy ran deep, and the monolith had stood unchallenged for years.",
-      "He took it apart. What was once a single Angular system became an independent microservice with its own API, and its frontend was rebuilt in React while the business kept running.",
-      "Today he leads the client onboarding portal he has grown with since its first commit — making architecture decisions, running technical discovery, and shipping to production."
-    ]
+      "He helped take it apart. What was once a single Angular system became an independent microservice with its own API, and its frontend was rebuilt in React while the business kept running.",
+      "Today he is the technical reference on the client onboarding portal he has grown with since its early days — shaping architecture decisions, running technical discovery, and shipping to production."
+    ],
+    "timelineTitle": "Experience",
+    "timelineSubtitle": "Five years in fintech: bank reconciliation and payment operator integrations.",
+    "company": "Boavista Tecnologia",
+    "companyMeta": "Fortaleza, Brazil · Bank reconciliation",
+    "roles": [
+      {
+        "title": "Full-Stack Developer (Mid-level)",
+        "period": "Nov 2024 – Present",
+        "current": true
+      },
+      {
+        "title": "Junior Developer",
+        "period": "Nov 2022 – Nov 2024",
+        "current": false
+      },
+      {
+        "title": "Trainee",
+        "period": "Feb 2022 – Nov 2022",
+        "current": false
+      },
+      {
+        "title": "Intern",
+        "period": "Aug 2021 – Feb 2022",
+        "current": false
+      }
+    ],
+    "highlightsLabel": "Highlights",
+    "highlights": [
+      "Technical reference on the client onboarding portal, which automates integrations with payment operators.",
+      "Took part in splitting an Angular monolith into a microservice with its own API, and in migrating its AngularJS frontend to React.",
+      "Architecture decisions, technical discovery, backlog refinement, code review and production deploys.",
+      "Test-driven development with JUnit 5; end-to-end tests with Selenium."
+    ],
+    "stack": [
+      "Java 17+",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "JPA",
+      "JUnit 5",
+      "Selenium",
+      "GitLab"
+    ],
+    "educationLabel": "Education",
+    "education": {
+      "degree": "B.Sc. in Information Systems",
+      "school": "UNI7",
+      "period": "2019 – 2024"
+    }
   },
   "projects": {
     "title": "Projects",
@@ -38,6 +88,13 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Open to international opportunities."
+    "subtitle": "Open to international opportunities.",
+    "pitch": "Looking for a remote full-stack role working with Java, Spring Boot and React. The fastest way to reach me is email.",
+    "emailLabel": "Email",
+    "copyLabel": "Copy",
+    "copiedLabel": "Copied!",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "cvLabel": "Download CV (PDF)"
   }
 }
