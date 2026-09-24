@@ -13,7 +13,10 @@
   },
   "home": {
     "greeting": "Olá, eu sou",
-    "roles": ["Desenvolvedor Fullstack", "Java · Spring Boot · React"]
+    "roles": [
+      "Desenvolvedor Fullstack",
+      "Java · Spring Boot · React"
+    ]
   },
   "experience": {
     "episode": "Episódio V",
@@ -29,9 +32,9 @@
     "subtitle": "Trabalhos selecionados. Buscados direto do GitHub.",
     "codeLabel": "Código",
     "demoLabel": "Ver no ar",
-    "updatedLabel": "Atualizado",
     "emptyState": "Não consegui carregar a lista de projetos agora. Ela está disponível no GitHub.",
-    "githubLink": "Ver tudo no GitHub"
+    "githubLink": "Ver tudo no GitHub",
+    "lastCommitLabel": "Último commit"
   },
   "contact": {
     "title": "Contato",

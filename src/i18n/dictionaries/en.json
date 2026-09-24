@@ -13,7 +13,10 @@
   },
   "home": {
     "greeting": "Hello, I am",
-    "roles": ["Fullstack Developer", "Java · Spring Boot · React"]
+    "roles": [
+      "Fullstack Developer",
+      "Java · Spring Boot · React"
+    ]
   },
   "experience": {
     "episode": "Episode V",
@@ -29,9 +32,9 @@
     "subtitle": "Selected work. Pulled live from GitHub.",
     "codeLabel": "Code",
     "demoLabel": "Live demo",
-    "updatedLabel": "Updated",
     "emptyState": "The project list could not be loaded right now. It is available on GitHub.",
-    "githubLink": "See everything on GitHub"
+    "githubLink": "See everything on GitHub",
+    "lastCommitLabel": "Last commit"
   },
   "contact": {
     "title": "Contact",

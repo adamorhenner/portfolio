@@ -1,13 +1,15 @@
 import HomeSection from '@/components/HomeSection';
 import NavbarComponent from '@/components/NavBar';
 import ParticlesBackground from '@/components/ParticlesBackground';
+import ProjectsSection from '@/components/ProjectsSection';
 import StarWarsIntro from '@/components/StarWarsIntro';
 import {defaultLocale, isLocale, type Locale} from '@/i18n/config';
 import {getDictionary} from '@/i18n/getDictionary';
+import {getProjects} from '@/lib/github';
 
 export default async function Home({params}: { params: { lang: string } }) {
     const lang: Locale = isLocale(params.lang) ? params.lang : defaultLocale;
-    const dict = await getDictionary(lang);
+    const [dict, projects] = await Promise.all([getDictionary(lang), getProjects(lang)]);
 
     return (
         <div>
@@ -23,8 +25,7 @@ export default async function Home({params}: { params: { lang: string } }) {
             </section>
 
             <section id="projetos" className="section">
-                <h2>{dict.projects.title}</h2>
-                <p>{dict.projects.subtitle}</p>
+                <ProjectsSection projects={projects} lang={lang} dict={dict.projects}/>
             </section>
 
             <section id="contato" className="section">
