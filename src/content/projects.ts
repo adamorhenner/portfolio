@@ -8,6 +8,7 @@
 
 /** Nome exibido, quando o nome do repositorio nao serve como titulo. */
 export const displayNames: Record<string, string> = {
+    'oauth2-microservices': 'OAuth2 Microservices',
     'car-store-kafka': 'Car Store · Kafka',
     'algamoney-api': 'AlgaMoney API',
 };

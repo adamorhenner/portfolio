@@ -13,6 +13,8 @@ const SEARCH_URL =
     `https://api.github.com/search/repositories` +
     `?q=user:${GITHUB_USER}+topic:${PORTFOLIO_TOPIC}&sort=updated&order=desc&per_page=30`;
 
+const REVALIDATE_SECONDS = process.env.NODE_ENV === 'development' ? 10 : 3600;
+
 export const GITHUB_PROFILE_URL = `https://github.com/${GITHUB_USER}`;
 
 type GitHubRepo = {
@@ -68,9 +70,11 @@ export async function getProjects(locale: Locale): Promise<Project[]> {
     try {
         const response = await fetch(SEARCH_URL, {
             headers: {Accept: 'application/vnd.github+json'},
-            // Uma chamada por hora. Sem token o limite da busca e baixo, e o
-            // cache do Next resolve isso sem precisar autenticar.
-            next: {revalidate: 3600},
+            // Em producao, uma chamada por hora: sem token o limite da busca e
+            // baixo, e o cache do Next resolve isso sem precisar autenticar.
+            // Em desenvolvimento o cache seria um estorvo -- marcar um topic
+            // novo no GitHub e nao ver nada mudar por uma hora.
+            next: {revalidate: REVALIDATE_SECONDS},
         });
 
         if (!response.ok) return [];
