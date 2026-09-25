@@ -4,8 +4,8 @@ import Image from 'next/image';
 import ReactTypingEffect from 'react-typing-effect';
 
 import type {Dictionary} from '@/i18n/getDictionary';
-import portrait from '../../../public/images/adamor-cosmic.webp';
 
+import portrait from '../../../public/images/adamor-cosmic.webp';
 import * as S from './styles';
 
 type Props = {

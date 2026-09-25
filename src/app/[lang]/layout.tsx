@@ -1,11 +1,11 @@
+import '@/styles/global.css';
+
 import type {Metadata} from 'next';
 import {IBM_Plex_Sans, JetBrains_Mono, Saira_Extra_Condensed} from 'next/font/google';
 
-import StyledComponentsRegistry from '@/lib/StyledComponentsRegistry';
 import {defaultLocale, isLocale, type Locale, locales} from '@/i18n/config';
 import {getDictionary} from '@/i18n/getDictionary';
-
-import '@/styles/global.css';
+import StyledComponentsRegistry from '@/lib/StyledComponentsRegistry';
 
 const SITE_URL = 'https://adamorhenner.vercel.app';
 
