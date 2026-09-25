@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# editor / AI tooling (local, not part of the app)
+.idea/
+.claude/
+.impeccable/
+.agents/
+.codex/
+.codegraph/

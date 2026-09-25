@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "title": "Adamor Henner — Desenvolvedor Fullstack",
+    "description": "Desenvolvedor fullstack com mais de 5 anos construindo sistemas de conciliação bancária e integração com operadoras de pagamento em Java, Spring Boot, React e TypeScript."
+  },
+  "nav": {
+    "home": "Início",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "languageLabel": "Idioma",
+    "switchTo": "View in English"
+  },
+  "home": {
+    "greeting": "Olá, eu sou",
+    "roles": [
+      "Desenvolvedor Fullstack",
+      "Java · Spring Boot · React"
+    ]
+  },
+  "experience": {
+    "episode": "Episódio V",
+    "title": "O LEGADO CONTRA-ATACA",
+    "paragraphs": [
+      "Há cinco anos um estagiário entrou numa empresa de conciliação bancária em Fortaleza. Os sistemas eram vastos, o legado era profundo, e o monolito seguia intocado havia anos.",
+      "Ele ajudou a dividi-lo. O que era um único sistema Angular virou um microsserviço independente, com API própria, e o frontend foi reconstruído em React sem parar a operação.",
+      "Hoje é a referência técnica do portal de onboarding de clientes que acompanha desde o início — participando das decisões de arquitetura, conduzindo discovery técnico e entregando em produção."
+    ],
+    "timelineTitle": "Experiência",
+    "timelineSubtitle": "Cinco anos em fintech: conciliação bancária e integração com operadoras de pagamento.",
+    "company": "Boavista Tecnologia",
+    "companyMeta": "Fortaleza, CE · Conciliação bancária",
+    "roles": [
+      {
+        "title": "Desenvolvedor Full-Stack Pleno",
+        "period": "nov. 2024 – atual",
+        "current": true
+      },
+      {
+        "title": "Desenvolvedor Júnior",
+        "period": "nov. 2022 – nov. 2024",
+        "current": false
+      },
+      {
+        "title": "Trainee",
+        "period": "fev. 2022 – nov. 2022",
+        "current": false
+      },
+      {
+        "title": "Estagiário",
+        "period": "ago. 2021 – fev. 2022",
+        "current": false
+      }
+    ],
+    "highlightsLabel": "Destaques",
+    "highlights": [
+      "Referência técnica do portal de onboarding de clientes, que automatiza a integração com operadoras de pagamento.",
+      "Participou do desacoplamento de um monolito Angular em microsserviço com API própria e da migração do frontend AngularJS para React.",
+      "Decisões de arquitetura, discovery técnico, refinamento de backlog, code review e deploy em produção.",
+      "Desenvolvimento orientado a testes com JUnit 5; testes ponta a ponta com Selenium."
+    ],
+    "stack": [
+      "Java 17+",
+      "Spring Boot",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "JPA",
+      "JUnit 5",
+      "Selenium",
+      "GitLab"
+    ],
+    "educationLabel": "Formação",
+    "education": {
+      "degree": "Bacharelado em Sistemas de Informação",
+      "school": "UNI7",
+      "period": "2019 – 2024"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Trabalhos selecionados. Buscados direto do GitHub.",
+    "codeLabel": "Código",
+    "demoLabel": "Ver no ar",
+    "emptyState": "Não consegui carregar a lista de projetos agora. Ela está disponível no GitHub.",
+    "githubLink": "Ver tudo no GitHub",
+    "lastCommitLabel": "Último commit"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Aberto a oportunidades internacionais.",
+    "pitch": "Busco uma vaga remota full-stack com Java, Spring Boot e React. O jeito mais rápido de falar comigo é por e-mail.",
+    "emailLabel": "E-mail",
+    "copyLabel": "Copiar",
+    "copiedLabel": "Copiado!",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub",
+    "cvLabel": "Baixar currículo (PDF)"
+  }
+}

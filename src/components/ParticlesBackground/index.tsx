@@ -1,3 +1,5 @@
+'use client';
+
 import {
     type Container,
     type ISourceOptions
