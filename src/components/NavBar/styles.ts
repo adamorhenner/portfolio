@@ -1,100 +1,147 @@
 import styled from 'styled-components';
 
-export const Navbar = styled.nav`
+export const Header = styled.header`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #1A0B2E;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  inset: 0 0 auto 0;
   z-index: 1000;
-`;
-
-export const NavbarContent = styled.ul`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 1rem;
-`;
-
-export const NavbarItem = styled.li`
-  position: relative;
+  height: 80px;
   display: flex;
   align-items: center;
-  margin: 0;
+  gap: 2.5rem;
+  padding: 0 clamp(1rem, 4.5vw, 4rem);
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  border-bottom: 1px solid transparent;
 
-  &[data-active='true'] a {
-    color: #C3A2DC;
-    font-weight: 700;
+  &[data-scrolled='true'] {
+    background-color: rgba(17, 7, 31, 0.82);
+    backdrop-filter: blur(10px);
+    border-bottom-color: var(--border);
   }
 
-  &[data-active='true']::after {
-    content: '';
+  @media (max-width: 768px) {
+    height: 64px;
+  }
+`;
+
+export const Logo = styled.a`
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--heading);
+
+  span {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  &:hover {
+    color: var(--heading);
+  }
+`;
+
+export const MenuButton = styled.button`
+  display: none;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--heading);
+
+  @media (max-width: 768px) {
+    display: inline-flex;
+  }
+`;
+
+export const Menu = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
     position: absolute;
-    bottom: -0.35rem;
+    top: 64px;
     left: 0;
     right: 0;
-    height: 2px;
-    border-radius: 2px;
-    background-color: #5C2F6E;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1.25rem 1.5rem;
+    background-color: rgba(17, 7, 31, 0.96);
+    border-bottom: 1px solid var(--border);
+
+    &[data-open='true'] {
+      display: flex;
+    }
+  }
+`;
+
+export const Links = styled.ul`
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.25rem;
   }
 `;
 
 export const Link = styled.a`
-  color: #A68AB8;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--body-text);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 
-  &:hover {
-    color: #C3A2DC;
-    text-decoration: none;
+  span {
+    color: var(--muted);
   }
 
-  &:focus-visible {
-    outline: 2px solid #C3A2DC;
-    outline-offset: 4px;
-    border-radius: 2px;
+  &:hover {
+    color: var(--heading);
+  }
+
+  &[aria-current='true'] {
+    color: var(--heading);
+    border-bottom-color: var(--glow);
+
+    span {
+      color: var(--glow);
+    }
   }
 `;
 
 export const LanguageSwitch = styled.div`
   display: inline-flex;
-  align-items: center;
-  border: 1px solid #3F2B5B;
+  border: 1px solid var(--border-strong);
   border-radius: 999px;
   overflow: hidden;
-  margin-left: 0.5rem;
 `;
 
 export const LanguageOption = styled.button`
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  color: #8E7BA5;
-  cursor: pointer;
+  min-width: 44px;
+  min-height: 32px;
+  padding: 0 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  padding: 0.25rem 0.7rem;
+  color: var(--muted);
   transition: background-color 0.2s ease, color 0.2s ease;
 
   &[aria-pressed='true'] {
-    background-color: #5C2F6E;
-    color: #F1E8FA;
+    background-color: var(--glow);
+    color: var(--void);
   }
 
   &:hover:not([aria-pressed='true']) {
-    color: #C3A2DC;
-    background-color: transparent;
+    color: var(--glow);
   }
 
   &:focus-visible {
-    outline: 2px solid #C3A2DC;
     outline-offset: -2px;
   }
 `;

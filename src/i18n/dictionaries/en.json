@@ -1,35 +1,55 @@
 {
   "meta": {
-    "title": "Adamor Henner — Fullstack Developer",
-    "description": "Fullstack developer with 5+ years building bank reconciliation and payment integration systems with Java, Spring Boot, React and TypeScript."
+    "title": "Adamor Henner — Full-Stack Developer",
+    "description": "Full-stack developer with 5+ years of experience in Java, Spring Boot, React and TypeScript. Open to international remote roles."
   },
   "nav": {
-    "home": "Home",
-    "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact",
+    "home": "home",
+    "experience": "experience",
+    "projects": "projects",
+    "contact": "contact",
     "languageLabel": "Language",
-    "switchTo": "Ver em português"
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "sectionsLabel": "Sections"
   },
   "home": {
-    "greeting": "Hello, I am",
+    "greeting": "// hello, world — I'm",
     "roles": [
-      "Fullstack Developer",
+      "Full-Stack Developer",
       "Java · Spring Boot · React"
-    ]
+    ],
+    "summary": "5+ years with Java, Spring Boot and React. Today I build the portal that automates client onboarding and payment-operator integrations.",
+    "ctaProjects": "See projects",
+    "ctaIntro": "Watch the intro",
+    "badgeLabel": "5 years @ Boavista Tecnologia ·",
+    "badgeValue": "intern → mid-level",
+    "portraitAlt": "Illustrated portrait of Adamor Henner with a space theme",
+    "scrollLabel": "Scroll to experience"
   },
   "experience": {
+    "sectionLabel": "// 02 — experience",
+    "modeLabel": "How to view the experience",
+    "modeCrawl": "Intro",
+    "modeRead": "Read text",
+    "pause": "Pause intro",
+    "resume": "Resume intro",
+    "skip": "Skip intro →",
     "episode": "Episode V",
     "title": "THE LEGACY STRIKES BACK",
+    "readTitle": "The legacy strikes back",
     "paragraphs": [
       "Five years ago an intern joined a bank reconciliation company in Fortaleza. The systems were vast, the legacy ran deep, and the monolith had stood unchallenged for years.",
       "He helped take it apart. What was once a single Angular system became an independent microservice with its own API, and its frontend was rebuilt in React while the business kept running.",
-      "Today he is the technical reference on the client onboarding portal he has grown with since its early days — shaping architecture decisions, running technical discovery, and shipping to production."
+      "Today he is the technical reference on the client onboarding portal he has grown with since its early days — the system that automates client onboarding and payment-operator integrations."
     ],
-    "timelineTitle": "Experience",
-    "timelineSubtitle": "Five years in fintech: bank reconciliation and payment operator integrations.",
+    "highlights": [
+      "Architecture decisions and technical discovery for new features",
+      "Backlog refinement, code review and production deploys",
+      "Test-driven development with JUnit 5; end-to-end tests with Selenium"
+    ],
     "company": "Boavista Tecnologia",
-    "companyMeta": "Fortaleza, Brazil · Bank reconciliation",
+    "companyMeta": "Fortaleza, Brazil · 2021 —",
     "roles": [
       {
         "title": "Full-Stack Developer (Mid-level)",
@@ -52,49 +72,43 @@
         "current": false
       }
     ],
-    "highlightsLabel": "Highlights",
-    "highlights": [
-      "Technical reference on the client onboarding portal, which automates integrations with payment operators.",
-      "Took part in splitting an Angular monolith into a microservice with its own API, and in migrating its AngularJS frontend to React.",
-      "Architecture decisions, technical discovery, backlog refinement, code review and production deploys.",
-      "Test-driven development with JUnit 5; end-to-end tests with Selenium."
-    ],
+    "rolesLabel": "Career",
     "stack": [
       "Java 17+",
       "Spring Boot",
       "React",
       "TypeScript",
       "PostgreSQL",
-      "JPA",
-      "JUnit 5",
-      "Selenium",
-      "GitLab"
+      "JUnit 5"
     ],
-    "educationLabel": "Education",
-    "education": {
-      "degree": "B.Sc. in Information Systems",
-      "school": "UNI7",
-      "period": "2019 – 2024"
-    }
+    "education": "B.Sc. in Information Systems · UNI7 · 2019–2024"
   },
   "projects": {
+    "sectionLabel": "// 03 — projects",
     "title": "Projects",
-    "subtitle": "Selected work. Pulled live from GitHub.",
+    "subtitle": "Selected work, pulled live from GitHub.",
     "codeLabel": "Code",
     "demoLabel": "Live demo",
+    "liveBadge": "live",
     "emptyState": "The project list could not be loaded right now. It is available on GitHub.",
-    "githubLink": "See everything on GitHub",
+    "githubLink": "See everything on GitHub →",
     "lastCommitLabel": "Last commit"
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Open to international opportunities.",
-    "pitch": "Looking for a remote full-stack role working with Java, Spring Boot and React. The fastest way to reach me is email.",
+    "sectionLabel": "// 04 — contact",
+    "title": "Let's talk",
+    "pitch": "Open to international remote opportunities as a full-stack developer (Java, Spring Boot, React). Email is the fastest way to reach me.",
+    "terminalLabel": "Contact terminal",
     "emailLabel": "Email",
-    "copyLabel": "Copy",
-    "copiedLabel": "Copied!",
+    "copyLabel": "copy",
+    "copiedLabel": "copied ✓",
+    "copiedStatus": "> email copied to clipboard",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub",
     "cvLabel": "Download CV (PDF)"
+  },
+  "footer": {
+    "location": "Fortaleza, BR · built with Next.js",
+    "backToTop": "back to top ↑"
   }
 }

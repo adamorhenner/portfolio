@@ -1,35 +1,55 @@
 {
   "meta": {
-    "title": "Adamor Henner — Desenvolvedor Fullstack",
-    "description": "Desenvolvedor fullstack com mais de 5 anos construindo sistemas de conciliação bancária e integração com operadoras de pagamento em Java, Spring Boot, React e TypeScript."
+    "title": "Adamor Henner — Desenvolvedor Full-Stack",
+    "description": "Desenvolvedor full-stack com mais de 5 anos de experiência em Java, Spring Boot, React e TypeScript. Aberto a vagas remotas internacionais."
   },
   "nav": {
-    "home": "Início",
-    "experience": "Experiência",
-    "projects": "Projetos",
-    "contact": "Contato",
+    "home": "início",
+    "experience": "experiência",
+    "projects": "projetos",
+    "contact": "contato",
     "languageLabel": "Idioma",
-    "switchTo": "View in English"
+    "menuOpen": "Abrir menu",
+    "menuClose": "Fechar menu",
+    "sectionsLabel": "Seções"
   },
   "home": {
-    "greeting": "Olá, eu sou",
+    "greeting": "// olá, mundo — eu sou",
     "roles": [
-      "Desenvolvedor Fullstack",
+      "Desenvolvedor Full-Stack",
       "Java · Spring Boot · React"
-    ]
+    ],
+    "summary": "5+ anos em Java, Spring Boot e React. Hoje construo o portal que automatiza a implantação de clientes e a integração com operadoras de pagamento.",
+    "ctaProjects": "Ver projetos",
+    "ctaIntro": "Assistir a intro",
+    "badgeLabel": "5 anos na Boavista Tecnologia ·",
+    "badgeValue": "de estagiário a pleno",
+    "portraitAlt": "Retrato ilustrado de Adamor Henner em estética espacial",
+    "scrollLabel": "Rolar para a experiência"
   },
   "experience": {
+    "sectionLabel": "// 02 — experiência",
+    "modeLabel": "Como ver a experiência",
+    "modeCrawl": "Intro",
+    "modeRead": "Ler texto",
+    "pause": "Pausar intro",
+    "resume": "Continuar intro",
+    "skip": "Pular intro →",
     "episode": "Episódio V",
     "title": "O LEGADO CONTRA-ATACA",
+    "readTitle": "O legado contra-ataca",
     "paragraphs": [
       "Há cinco anos um estagiário entrou numa empresa de conciliação bancária em Fortaleza. Os sistemas eram vastos, o legado era profundo, e o monolito seguia intocado havia anos.",
       "Ele ajudou a dividi-lo. O que era um único sistema Angular virou um microsserviço independente, com API própria, e o frontend foi reconstruído em React sem parar a operação.",
-      "Hoje é a referência técnica do portal de onboarding de clientes que acompanha desde o início — participando das decisões de arquitetura, conduzindo discovery técnico e entregando em produção."
+      "Hoje é a referência técnica do portal de onboarding de clientes que acompanha desde o início — o sistema que automatiza a implantação de clientes e a integração com operadoras de pagamento."
     ],
-    "timelineTitle": "Experiência",
-    "timelineSubtitle": "Cinco anos em fintech: conciliação bancária e integração com operadoras de pagamento.",
+    "highlights": [
+      "Decisões de arquitetura e discovery técnico de novas funcionalidades",
+      "Refinamento de backlog, code review e deploy em produção",
+      "Desenvolvimento orientado a testes com JUnit 5; testes ponta a ponta com Selenium"
+    ],
     "company": "Boavista Tecnologia",
-    "companyMeta": "Fortaleza, CE · Conciliação bancária",
+    "companyMeta": "Fortaleza, CE · 2021 —",
     "roles": [
       {
         "title": "Desenvolvedor Full-Stack Pleno",
@@ -52,49 +72,43 @@
         "current": false
       }
     ],
-    "highlightsLabel": "Destaques",
-    "highlights": [
-      "Referência técnica do portal de onboarding de clientes, que automatiza a integração com operadoras de pagamento.",
-      "Participou do desacoplamento de um monolito Angular em microsserviço com API própria e da migração do frontend AngularJS para React.",
-      "Decisões de arquitetura, discovery técnico, refinamento de backlog, code review e deploy em produção.",
-      "Desenvolvimento orientado a testes com JUnit 5; testes ponta a ponta com Selenium."
-    ],
+    "rolesLabel": "Carreira",
     "stack": [
       "Java 17+",
       "Spring Boot",
       "React",
       "TypeScript",
       "PostgreSQL",
-      "JPA",
-      "JUnit 5",
-      "Selenium",
-      "GitLab"
+      "JUnit 5"
     ],
-    "educationLabel": "Formação",
-    "education": {
-      "degree": "Bacharelado em Sistemas de Informação",
-      "school": "UNI7",
-      "period": "2019 – 2024"
-    }
+    "education": "Bacharelado em Sistemas de Informação · UNI7 · 2019–2024"
   },
   "projects": {
+    "sectionLabel": "// 03 — projetos",
     "title": "Projetos",
-    "subtitle": "Trabalhos selecionados. Buscados direto do GitHub.",
+    "subtitle": "Trabalhos selecionados, buscados direto do GitHub.",
     "codeLabel": "Código",
     "demoLabel": "Ver no ar",
+    "liveBadge": "no ar",
     "emptyState": "Não consegui carregar a lista de projetos agora. Ela está disponível no GitHub.",
-    "githubLink": "Ver tudo no GitHub",
+    "githubLink": "Ver tudo no GitHub →",
     "lastCommitLabel": "Último commit"
   },
   "contact": {
-    "title": "Contato",
-    "subtitle": "Aberto a oportunidades internacionais.",
-    "pitch": "Busco uma vaga remota full-stack com Java, Spring Boot e React. O jeito mais rápido de falar comigo é por e-mail.",
+    "sectionLabel": "// 04 — contato",
+    "title": "Vamos conversar",
+    "pitch": "Aberto a oportunidades internacionais remotas como dev full-stack (Java, Spring Boot, React). O jeito mais rápido de falar comigo é por e-mail.",
+    "terminalLabel": "Terminal de contato",
     "emailLabel": "E-mail",
-    "copyLabel": "Copiar",
-    "copiedLabel": "Copiado!",
+    "copyLabel": "copiar",
+    "copiedLabel": "copiado ✓",
+    "copiedStatus": "> e-mail copiado para a área de transferência",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub",
     "cvLabel": "Baixar currículo (PDF)"
+  },
+  "footer": {
+    "location": "Fortaleza, BR · feito com Next.js",
+    "backToTop": "voltar ao topo ↑"
   }
 }

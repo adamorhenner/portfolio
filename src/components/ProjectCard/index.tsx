@@ -11,6 +11,7 @@ type Props = {
     project: Project;
     lang: Locale;
     dict: Dictionary['projects'];
+    featured?: boolean;
 };
 
 function formatLastCommit(iso: string, lang: Locale) {
@@ -20,55 +21,54 @@ function formatLastCommit(iso: string, lang: Locale) {
     }).format(new Date(iso));
 }
 
-const ProjectCard = ({project, lang, dict}: Props) => {
+const ProjectCard = ({project, lang, dict, featured = false}: Props) => {
+    const hasCover = featured && Boolean(project.cover);
+
     return (
-        <S.Card>
-            {project.cover && <S.Cover src={project.cover} alt="" loading="lazy"/>}
+        <S.Card data-featured={featured || undefined} data-cover={hasCover || undefined}>
+            {hasCover && <S.Cover src={project.cover as string} alt="" loading="lazy"/>}
 
-            <S.Header>
-                <S.LanguageDot $color={languageColor(project.language)} aria-hidden="true"/>
-                <S.RepoName>{project.name}</S.RepoName>
-                {project.stars > 0 && <S.Stars>★ {project.stars}</S.Stars>}
-            </S.Header>
+            <S.Body>
+                <S.Meta>
+                    <S.LanguageDot $color={languageColor(project.language)} aria-hidden="true"/>
+                    <S.RepoName>
+                        {project.name}
+                        {project.language && ` · ${project.language}`}
+                    </S.RepoName>
+                    {project.demoUrl && <S.LiveBadge>● {dict.liveBadge}</S.LiveBadge>}
+                    {!project.demoUrl && project.stars > 0 && <S.Stars>★ {project.stars}</S.Stars>}
+                </S.Meta>
 
-            <S.Title>{project.title}</S.Title>
+                <S.Title>{project.title}</S.Title>
 
-            {project.description && <S.Description>{project.description}</S.Description>}
+                {project.description && <S.Description>{project.description}</S.Description>}
 
-            {project.topics.length > 0 && (
-                <S.Topics>
-                    {project.topics.map((topic) => (
-                        <S.Topic key={topic}>{topic}</S.Topic>
-                    ))}
-                </S.Topics>
-            )}
+                {project.topics.length > 0 && (
+                    <S.Topics>
+                        {project.topics.slice(0, 5).map((topic) => (
+                            <S.Topic key={topic}>{topic}</S.Topic>
+                        ))}
+                    </S.Topics>
+                )}
 
-            <S.Footer>
-                <S.LastCommit>
-                    {dict.lastCommitLabel} {formatLastCommit(project.lastCommit, lang)}
-                </S.LastCommit>
+                <S.Footer>
+                    <S.LastCommit>
+                        {dict.lastCommitLabel} {formatLastCommit(project.lastCommit, lang)}
+                    </S.LastCommit>
 
-                <S.Links>
-                    <S.CardLink
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {dict.codeLabel}
-                    </S.CardLink>
-
-                    {project.demoUrl && (
-                        <S.CardLink
-                            data-variant="demo"
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {dict.demoLabel}
+                    <S.Links>
+                        <S.CardLink href={project.url} target="_blank" rel="noopener noreferrer">
+                            {dict.codeLabel}
                         </S.CardLink>
-                    )}
-                </S.Links>
-            </S.Footer>
+
+                        {project.demoUrl && (
+                            <S.DemoLink href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                                {dict.demoLabel} <span aria-hidden="true">↗</span>
+                            </S.DemoLink>
+                        )}
+                    </S.Links>
+                </S.Footer>
+            </S.Body>
         </S.Card>
     );
 };

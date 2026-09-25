@@ -1,7 +1,7 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-import {FaDownload, FaEnvelope, FaGithub, FaLinkedin} from 'react-icons/fa';
+import {FaDownload} from 'react-icons/fa';
 
 import {CV_FILES, EMAIL, LINKEDIN_URL} from '@/content/contact';
 import type {Locale} from '@/i18n/config';
@@ -36,47 +36,49 @@ const ContactSection = ({lang, dict}: Props) => {
 
     return (
         <S.Wrapper>
-            <S.Heading>
+            <S.Intro>
+                <S.Label>{dict.sectionLabel}</S.Label>
                 <S.Title>{dict.title}</S.Title>
-                <S.Subtitle>{dict.subtitle}</S.Subtitle>
-            </S.Heading>
+                <S.Pitch>{dict.pitch}</S.Pitch>
+            </S.Intro>
 
-            <S.Pitch>{dict.pitch}</S.Pitch>
+            <S.Terminal aria-label={dict.terminalLabel}>
+                <S.TerminalBar aria-hidden="true">
+                    <span/><span/><span/>
+                    <S.TerminalName>contact.sh</S.TerminalName>
+                </S.TerminalBar>
 
-            <S.EmailRow>
-                <S.EmailLink href={`mailto:${EMAIL}`}>
-                    <FaEnvelope aria-hidden="true"/>
-                    <span>
-                        <S.SrOnly>{dict.emailLabel}: </S.SrOnly>
-                        {EMAIL}
-                    </span>
-                </S.EmailLink>
-                <S.CopyButton type="button" onClick={copyEmail}>
-                    {copied ? dict.copiedLabel : dict.copyLabel}
-                </S.CopyButton>
-                {/* Anuncia a copia para leitor de tela */}
-                <S.SrOnly aria-live="polite">{copied ? dict.copiedLabel : ''}</S.SrOnly>
-            </S.EmailRow>
+                <S.TerminalBody>
+                    <S.Prompt aria-hidden="true"><span>~</span> $ cat contact.sh</S.Prompt>
 
-            <S.Links>
-                <li>
+                    <S.EmailRow>
+                        <S.Key aria-hidden="true">email=</S.Key>
+                        <S.EmailLink href={`mailto:${EMAIL}`}>
+                            <S.SrOnly>{dict.emailLabel}: </S.SrOnly>&quot;{EMAIL}&quot;
+                        </S.EmailLink>
+                        <S.CopyButton type="button" onClick={copyEmail}>
+                            {copied ? dict.copiedLabel : dict.copyLabel}
+                        </S.CopyButton>
+                    </S.EmailRow>
+
                     <S.Channel href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin aria-hidden="true"/> {dict.linkedinLabel}
+                        <S.Key>linkedin</S.Key><span aria-hidden="true">→</span> in/adamorhenner
+                        <S.External aria-hidden="true">↗</S.External>
                     </S.Channel>
-                </li>
-                <li>
                     <S.Channel href={GITHUB_PROFILE_URL} target="_blank" rel="noopener noreferrer">
-                        <FaGithub aria-hidden="true"/> {dict.githubLabel}
+                        <S.Key>github</S.Key><span aria-hidden="true">→</span> adamorhenner
+                        <S.External aria-hidden="true">↗</S.External>
                     </S.Channel>
-                </li>
-                {cvFile && (
-                    <li>
-                        <S.Channel href={cvFile} download data-variant="primary">
+
+                    {cvFile && (
+                        <S.CvLink href={cvFile} download>
                             <FaDownload aria-hidden="true"/> {dict.cvLabel}
-                        </S.Channel>
-                    </li>
-                )}
-            </S.Links>
+                        </S.CvLink>
+                    )}
+
+                    <S.Status aria-live="polite">{copied ? dict.copiedStatus : ''}</S.Status>
+                </S.TerminalBody>
+            </S.Terminal>
         </S.Wrapper>
     );
 };

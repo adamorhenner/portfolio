@@ -1,6 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*
+ * Tokens do tema "Night Terminal" (ver DESIGN.md).
+ * As fontes chegam como variaveis via next/font no layout:
+ * --font-mono (JetBrains Mono), --font-sans (IBM Plex Sans),
+ * --font-crawl (Saira Extra Condensed).
+ */
+:root {
+    --void: #11071F;
+    --void-deep: #0C0517;
+    --panel: #190D2B;
+    --panel-deep: #150925;
+    --panel-hover: #231238;
+    --border: #2E1E45;
+    --border-strong: #3F2B5B;
+    --accent-deep: #5C2F6E;
+    --glow: #C3A2DC;
+    --glow-bright: #D6BDEA;
+    --lavender: #A68AB8;
+    --muted: #8E7BA5;
+    --body-text: #B4A3C6;
+    --text-soft: #D3C4E3;
+    --heading: #E9DEF5;
+    --brightest: #F1E8FA;
+    --amber: #E5B857;
+    --mint: #9FD8B5;
 
-/* Reset de CSS */
+    --mono: var(--font-mono), ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    --sans: var(--font-sans), system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --crawl: var(--font-crawl), 'Arial Narrow', sans-serif;
+
+    color-scheme: dark;
+}
+
 *,
 *::before,
 *::after {
@@ -9,83 +39,61 @@
     box-sizing: border-box;
 }
 
-/* Box-sizing */
 html {
-    box-sizing: border-box;
-    font-size: 16px; /* Define a base para rem units */
+    font-size: 16px;
+    scroll-behavior: smooth;
 }
 
-/* Fontes e Tipografia */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: var(--sans);
     line-height: 1.6;
-    color: #333;
-    background-color: #11071F;
+    color: var(--text-soft);
+    background-color: var(--void);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Links */
 a {
-    color: #0070f3;
+    color: var(--glow);
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--glow-bright);
 }
 
-/* Cabeçalhos */
-h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-/* Parágrafos */
-p {
-    margin-bottom: 1rem;
-}
-
-/* Listas */
-ul {
+ul,
+ol {
     list-style: none;
-    padding-left: 0;
 }
 
-li {
-    margin-bottom: 0.5rem;
-}
-
-/* Imagens */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Botões */
+/* Botao neutro: cada componente define o proprio visual. */
 button {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0.5rem 1rem;
-    border: none;
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
     cursor: pointer;
-    background-color: #0070f3;
-    color: white;
-    border-radius: 4px;
 }
 
-button:hover {
-    background-color: #005bb5;
+:focus-visible {
+    outline: 2px solid var(--glow);
+    outline-offset: 3px;
 }
 
-/* Acessibilidade */
-:focus {
-    outline: 2px solid #0070f3;
-    outline-offset: 2px;
-}
-/* Secoes da pagina unica */
+/* Secoes da pagina unica. O fundo e transparente para as estrelas aparecerem. */
 .section {
-    min-height: 100vh;
-    padding: 4rem 1rem 0;
-    box-sizing: border-box;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
+    scroll-margin-top: 80px;
 }
