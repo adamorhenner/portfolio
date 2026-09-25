@@ -52,7 +52,8 @@ export const Name = styled.h1`
   }
 `;
 
-export const Role = styled.p`
+// div, nao p: o ReactTypingEffect renderiza uma <div> por dentro.
+export const Role = styled.div`
   display: flex;
   align-items: center;
   min-height: 2.2rem;
