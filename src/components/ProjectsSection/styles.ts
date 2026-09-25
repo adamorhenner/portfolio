@@ -1,72 +1,83 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 0 4rem;
+  padding: 6rem clamp(1rem, 4.5vw, 4rem) 5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.25rem;
 `;
 
 export const Heading = styled.header`
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+`;
+
+export const Label = styled.p`
+  margin-bottom: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  color: var(--muted);
 `;
 
 export const Title = styled.h2`
-  margin: 0;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
-  font-weight: 700;
-  color: #E9DEF5;
+  font-family: var(--mono);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--heading);
 `;
 
 export const Subtitle = styled.p`
-  margin: 0;
-  font-size: 1rem;
-  color: #A68AB8;
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  color: var(--body-text);
 `;
 
 export const Grid = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
 
-  > li {
-    margin: 0;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+`;
+
+export const FeaturedItem = styled.li`
+  grid-column: span 2;
+
+  @media (max-width: 640px) {
+    grid-column: auto;
   }
 `;
 
 export const Empty = styled.p`
-  margin: 0;
   padding: 2rem;
-  border: 1px dashed #3F2B5B;
-  border-radius: 10px;
-  color: #A68AB8;
+  border: 1px dashed var(--border-strong);
+  border-radius: 16px;
+  color: var(--body-text);
   text-align: center;
 `;
 
 export const ProfileLink = styled.a`
-  align-self: flex-start;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #A68AB8;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--glow);
 
   &:hover {
-    color: #C3A2DC;
-    border-bottom-color: #C3A2DC;
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    outline: 2px solid #C3A2DC;
-    outline-offset: 3px;
-    border-radius: 2px;
+    color: var(--glow-bright);
   }
 `;
