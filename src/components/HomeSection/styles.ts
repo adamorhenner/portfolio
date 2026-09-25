@@ -228,7 +228,11 @@ export const Badge = styled.p`
 
   @media (max-width: 900px) {
     bottom: 1rem;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
     font-size: 0.7rem;
+    white-space: normal;
+    text-align: center;
   }
 `;
 
