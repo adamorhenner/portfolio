@@ -1,15 +1,22 @@
 'use client';
 
-import {
-    type Container,
-    type ISourceOptions
-} from "@tsparticles/engine";
+import {type ISourceOptions} from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useMemo, useState } from "react";
 
 const ParticlesBackground: React.FC = () => {
     const [init, setInit] = useState(false);
+    const [reduceMotion, setReduceMotion] = useState(false);
+
+    useEffect(() => {
+        // Quem pediu menos animacao no sistema ve o ceu parado.
+        const query = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setReduceMotion(query.matches);
+        const onChange = (event: MediaQueryListEvent) => setReduceMotion(event.matches);
+        query.addEventListener('change', onChange);
+        return () => query.removeEventListener('change', onChange);
+    }, []);
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -18,10 +25,6 @@ const ParticlesBackground: React.FC = () => {
             setInit(true);
         });
     }, []);
-
-    const particlesLoaded = async (container?: Container): Promise<void> => {
-        console.log(container);
-    };
 
     const options: ISourceOptions = useMemo(
         () => ({
@@ -269,7 +272,7 @@ const ParticlesBackground: React.FC = () => {
                     "distance": {},
                     "direction": "none",
                     "drift": 0,
-                    "enable": true,
+                    "enable": !reduceMotion,
                     "gravity": {
                         "acceleration": 9.81,
                         "enable": false,
@@ -329,7 +332,7 @@ const ParticlesBackground: React.FC = () => {
                     },
                     "animation": {
                         "count": 0,
-                        "enable": true,
+                        "enable": !reduceMotion,
                         "speed": 1,
                         "decay": 0,
                         "delay": 0,
@@ -532,18 +535,13 @@ const ParticlesBackground: React.FC = () => {
                 }
             }
         }),
-        []
+        [reduceMotion]
     );
 
     if (init) {
         return (
-            <div style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }}>
-                <Particles
-                    id="tsparticles"
-                    particlesLoaded={particlesLoaded}
-                    options={options}
-                />
-            </div>
+            // fullScreen no options: o canvas fica fixo atras da pagina inteira.
+            <Particles id="tsparticles" options={options}/>
         );
     }
 
